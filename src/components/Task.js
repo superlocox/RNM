@@ -45,6 +45,7 @@ export const Task = props => {
       useEffect(() => {
         getTodos();
       }, []);
+      
     
     const handleChange = e =>{
         setTodo(e.target.value);
