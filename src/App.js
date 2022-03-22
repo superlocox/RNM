@@ -1,24 +1,31 @@
-import logo from './logo.svg';
+import React, { Fragment } from "react";
+import {Routes, Route, BrowserRouter } from "react-router-dom";
+// import { ProtectedRoute } from "./components/Protected.route";
+import Login from "./components/Login";
 import './App.css';
+
+import TaskList from "./components/TaskList";
+import Registration from "./components/Registration";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+ 
+
+   <BrowserRouter>
+   <Routes>
+   {/* <Route path="/" element={<Login/>} /> */}
+   
+   <Route path="/registration" element={<Registration/>} />
+   <Route path="/" element={<TaskList/>} />
+   <Route path="/login" element={<Login/>} />
+
+   {/* <Route path="/" element={<Registration/>} /> */}
+
+  <Route path="*" component={() => "404 NOT FOUND"} />
+   </Routes>
+   </BrowserRouter>
+      
+ 
   );
 }
 
